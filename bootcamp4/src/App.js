@@ -9,15 +9,12 @@ const App = (props) => {
     const [selectedBuilding, setSelectedBuilding] = useState(0);
 
     const filterUpdate = (value) => {
-        setFilterText(value);
         //Here you can set the filterText property of state to the value passed into this function
     };
 
     const selectedUpdate = (id) => {
-        setSelectedBuilding(id);
         //Here you can update the selectedBuilding property of state to the id passed into this function
     };
-    
 
     return (
         <div className="bg">
@@ -25,10 +22,7 @@ const App = (props) => {
                 <h1>UF Directory App</h1>
             </div>
 
-            <Search
-                filterUpdate={filterUpdate}
-                //filterText={filterText}
-            />
+            <Search/>
             <main>
                 <div className="row">
                     <div className="column1">
@@ -41,7 +35,6 @@ const App = (props) => {
                                 </tr>
                                 <BuildingList
                                     data={props.data}
-                                    text={filterText}
                                 />
                             </table>
                         </div>
